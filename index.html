@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>IoT no Comando e Controle</title>
-  <meta name="description" content="Estudo técnico sobre transmissão de dados em aplicações militares utilizando microcontrolador WiFi LoRa." />
+  <meta name="description"
+    content="Estudo técnico sobre transmissão de dados em aplicações militares utilizando microcontrolador WiFi LoRa." />
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <header>
     <div class="container nav" role="navigation" aria-label="Principal">
@@ -14,15 +17,17 @@
         <span class="logo" aria-hidden="true"></span>
         <span>IoT no <strong>Comando e Controle</strong></span>
       </a>
-      <nav class="menu" aria-label="Links primários">
-        <a href="#servicos">Serviços</a>
-        <a href="#portfolio">Portfólio</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#conteudo">Conteúdo</a>
+      <nav id="mobile" class="mobile-panel panel" aria-label="Links primários" aria-hidden="true">
+        <a href="#especificacoes">Especificações</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#futuro">Futuro</a>
+        <a href="#equipe">Equipe</a>
       </nav>
+
       <button class="burger" aria-label="Abrir menu" aria-controls="mobile" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
+
     </div>
   </header>
 
@@ -30,93 +35,174 @@
     <div class="container hero-inner">
       <div>
         <span class="eyebrow">Pesquisa Militar</span>
-        <h1>IoT no Comando e Controle: análise técnica da transmissão de dados em LoRa</h1>
-        <p class="muted">Estudo focado na avaliação da qualidade de transmissão de dados em ambientes militares reais, utilizando microcontrolador WiFi LoRa e protocolos estruturados.</p>
-        <div class="hero-cta">
-          <a class="cta" href="#portfolio">Ver experimentos</a>
-          <a class="btn-outline" href="#conteudo">Conheça a equipe</a>
-        </div>
+        <h1>IoT no Comando e Controle: análise técnica da transmissão de dados em
+          aplicações militares utilizando microcontrolador WiFi LoRa</h1>
+        <p class="muted">Estudo focado na avaliação da qualidade de transmissão entre dispositivos de baixo custo e
+          longo alcance em ambientes militares reais.</p>
       </div>
       <aside class="hero-card" aria-label="Destaque visual">
-        <img src="img/image0.jpg" alt="Imagem destaque da pesquisa" class="card-media" />
-        <div class="sp-2"></div>
-        <p class="muted" style="margin:0">Poster do estudo para publicação em revista militar, mostrando o uso de LoRa em viatura mecanizada VBTP-MR Guarani.</p>
+        <img src="assets/IoT no Comando e Controle.jpg" alt="Imagem destaque da pesquisa" class="card-media" />
+        <div>
+          <p class="muted" style="margin-top:10px">Poster do estudo publicado na revista <a
+              href="https://www.sige.ita.br/" target="_blank" class="text-links">SIGE</a>, demonstrando as capacidades
+            da tecnologia LoRa em uma viatura mecanizada VBTP-MR Guarani.</p>
+          <a class="cta" href="assets/IoT no Comando e Controle.pdf" target="_blank">Abrir PDF em outra aba</a>
+        </div>
       </aside>
     </div>
   </main>
 
   <!-- Serviços / Diferenciais -->
-  <section id="servicos" class="container">
+  <section id="especificacoes" class="container">
     <div class="section-head">
       <div>
         <span class="eyebrow">Especificações</span>
         <h2 class="h2">Protocolos e equipamentos utilizados</h2>
       </div>
-      <p class="muted" style="max-width:520px">O estudo utilizou protocolo LoRa estruturado em camadas customizadas para medir a perda de informação, e equipamentos militares como a viatura VBTP-MR Guarani.</p>
     </div>
+    <p class="muted" style="max-width:520px">O estudo utilizou protocolo LoRaWAN estruturado em camadas customizadas
+      para
+      medir a perda de informação. Foram avaliados 8 cenários de distâncias diferentes, começando em 500 metros,
+      afastando 500
+      metros por cenário, até alcançar 4000 metros entre transmissor e receptor. O dispositivo Heltec foi programado,
+      utilizando linguagem C, para funcionar com o fator de espalhamento (Spreading Factor) em 12, sendo o maior
+      valor para garantir que a transmissão ocorra na maior distância possível. A frequência de transmissão do aparelho
+      é a frequência de 915MHz, subfaixa ISM autorizada para uso pela ANATEL, sem necessidade de licença individual.</p>
 
-    <div class="grid-3">
+    <div>
       <div class="feature">
         <div class="icon" aria-hidden="true"></div>
         <div>
           <h3>Protocolo LoRa</h3>
-          <p>Pacotes de usuário divididos em seis grupos de mensagens (strings e valores numéricos), avaliando a integridade da transmissão.</p>
+          <p>Pacotes de usuário divididos em sete grupos de mensagens, sendo eles o número do pacote, um cabeçalho
+            padrão,
+            5 números aleatórios, 10 números aleatórios, 15 números aleatórios, 20 números aleatórios e uma palavra para
+            fechamento. Esta forma foi aderida para avaliar a integridade da transmissão, validando a condição de cada
+            grupo conforme os testes.</p>
         </div>
       </div>
       <div class="feature">
         <div class="icon" aria-hidden="true"></div>
         <div>
           <h3>Equipamento militar</h3>
-          <p>VBTP-MR Guarani: viatura blindada, transporte para 11 militares, motorização 6x6 e peso máximo de 25 toneladas.</p>
+          <p>VBTP-MR Guarani: foi utilizada uma viatura blindada, com capacidade de transporte para 11 militares,
+            motorização
+            6x6 e peso máximo de 25 toneladas, como meio de transporte do dispositivo transmissor. O dispositivo foi
+            implementado
+            na lateral da lataria do guarani, busacando-se um ponto bem posicionado, sem interferência do material do
+            veículo.</p>
         </div>
       </div>
       <div class="feature">
         <div class="icon" aria-hidden="true"></div>
         <div>
-          <h3>Métodos avaliativos</h3>
-          <p>Utilizamos correlação de Pearson, Kruskal-Wallis, regressão OLS e teste binomial exato para analisar os resultados.</p>
+          <h3>Aparelho receptor e registro dos dados</h3>
+          <p>O segundo dispositivo Heltec foi alocado em uma mesa no ponto inicial do trajeto dos testes. Para catalogar
+            os dados
+            transmitidos e recebidos pelos dispositivos foi utilizado o picocom, um emulador de terminal que consegue
+            registrar
+            dados recebidos de uma porta serial.
+          </p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="icon" aria-hidden="true"></div>
+        <div>
+          <h3>Tratamento e análise</h3>
+          <p>Para os dados listados pelo emulador, foi escrito um algorítimo em python para planilhar os dados dos
+            pacotes separados
+            em grupos e compara-los entre os registros de transmitidos e recebidos para cada teste. Com os dados
+            organizados, foi
+            realizada por métodos estatísticos: correlação de Pearson, para avaliar a relação entre a distância e a
+            eficiência do
+            sinal produzido; método não paramétrico de comparação de grupos de dados independentes
+            Kruskal-Wallis, para indicar a significância das medianas em relação a eficiência do sinal e dos pacotes
+            enviados pela distância; modelagem de regressão linear pelo método de Ordinary Least Squares (OLS)
+            para demonstrar a relação da eficiência do sinal ao longo das distâncias; e Teste Binomial Exato para
+            sinalizar a
+            significância da taxa de erro global por pacote transmitido, com limite de 5%.
+          </p>
         </div>
       </div>
     </div>
+
+    <div class="carousel">
+      <div class="carousel-track">
+        <img src="assets/image0.jpg" alt="Foto 1">
+        <img src="assets/image2.jpg" alt="Foto 2">
+        <img src="assets/guarani.jpg" alt="Foto 4">
+        <img src="assets/trajeto.jpg" alt="Foto 4">
+      </div>
+      <button class="carousel-btn prev">&#10094;</button>
+      <button class="carousel-btn next">&#10095;</button>
+    </div>
+
   </section>
 
   <!-- Portfólio / Projetos -->
-  <section id="portfolio" class="container">
+  <section id="resultados" class="container">
     <div class="section-head">
       <div>
         <span class="eyebrow">Experimentos</span>
         <h2 class="h2">Resultados dos testes em campo</h2>
       </div>
-      <a class="btn-outline" href="#">Ver todos</a>
     </div>
 
     <div class="grid-3">
       <article class="card">
-        <img class="card-media" alt="imagem2" src="img/image1.jpg" />
+        <img class="card-media" alt="Correlação de Pearson" src="assets/grafico1.png" />
         <div class="card-body">
-          <h3 class="card-title">Viatura VBTP-MR Guarani</h3>
-          <p class="card-text">Avaliação da comunicação LoRa em condições reais de teste militar, analisando integridade dos pacotes enviados e recebidos.</p>
+          <h3 class="card-title">Correlação de Pearson</h3>
+          <p class="card-text">O resultado da correlação indica que a soma de pacotes perdidos não tem relação
+            significativa com a distância entre os dispositivos, que a distância tem uma forte relação,
+            inversamente proporcional, com RSSI médio e que a soma de pacotes perdidos com o RSSI médio apresenta
+            uma relação invesamente proporcional significativa.
+          </p>
         </div>
       </article>
       <article class="card">
-        <img class="card-media" alt="imagem3" src="img/image2.jpg" />
+        <img class="card-media" alt="Modelagem de regressão linear" src="assets/grafico2.png" />
         <div class="card-body">
-          <h3 class="card-title">Grupos de mensagens</h3>
-          <p class="card-text">Pacotes organizados em 6 grupos para análise da perda de informação e confiabilidade do protocolo customizado.</p>
+          <h3 class="card-title">Modelagem de regressão linear pelo método de Ordinary Least Squares (OLS)</h3>
+          <p class="card-text">A partir do resultado da modelagem, é visível a piora do sinal médio dos pacotes
+            conforme o aumento da distância entre os dispositivos LoRa. Entretando, também é notável que o declínio
+            não é acentuado e que os valores não decaem constantemente. Isso pode indicar que a distância não é o
+            principal
+            fator determinante da queda de qualidade do sinal. </p>
         </div>
       </article>
       <article class="card">
-        <img class="card-media" alt="imagem4" src="img/image3.png" />
+        <img class="card-media" alt="Modelagem da relação entre distância e pacotes perdidos com corrompidos"
+          src="assets/grafico3.png" />
         <div class="card-body">
-          <h3 class="card-title">Medição de eficiência</h3>
-          <p class="card-text">Métodos estatísticos aplicados para validar a transmissão em diferentes distâncias, garantindo rigor técnico.</p>
+          <h3 class="card-title">Modelagem da relação entre a variável independente (distância) e a soma de pacotes
+            perdidos mais corrompidos pelo método de Ordinary Least Squares (OLS)</h3>
+          <p class="card-text">Concordando com a Correlação de Pearson, o gráfico demonstra um ligeiro aumento de perda
+            de pacotes
+            conforme o aumento da distância. Além de ser evidente, através dos valores de pacotes corrompidos que são
+            bem inconstântes.</p>
         </div>
       </article>
     </div>
+    <div class="feature">
+      <div class="icon" aria-hidden="true"></div>
+      <div>
+        <h3>Dados relevantes do estudo</h3>
+        <p>Fora 31 pacotes enviados por cenário, contabilizando um total de 248 pacotes enviados, 39 perdidos, 
+          42 recebidos mas corrompidos, 4 pacotes em que o numero do pacote foi corrompido, 21 vezes que o 
+          grupo A foi corrompido, 14 vezes que o grupo B foi corrompido, 16 vezes que o grupo C foi corrompido,
+          	24 vezes que o grupo D foi corrompido, 29 vezes que o grupo E foi corrompido e 22 vezes o grupo F 
+            foi corrompido. O teste 4 de 2000 metros de distância teve 100% de perda dos pacotes transmitidos,
+             enquanto os testes 3, 6 e 7 (500, 3000 e 3500) obtiveram 100% de recepção de pacotes.
+              A média total do RSSI ficou em 101,99 dBm, com o melhor sinal sendo -92 dBm do teste 1 (500 metros) 
+              e o pior sinal ficou em -111 dBm, ocorrendo nos testes 5, 6 e 8 (2500, 3000 e 4000). 
+		    <p>
+      </div>
+    </div>
   </section>
 
-  <!-- Sobre -->
-  <section id="sobre" class="container">
+  <!-- futuro -->
+  <section id="futuro" class="container">
     <div class="section-head">
       <div>
         <span class="eyebrow">Próximo estudo</span>
@@ -126,20 +212,30 @@
 
     <div class="grid-2">
       <div>
-        <p class="muted">Estamos avaliando a hipótese de uso de drones como repetidores LoRa para aumentar o alcance de comunicação e reduzir a corrupção de pacotes em enlaces com visada livre.</p>
-        <p class="muted">O estudo futuro pretende corrigir limitações observadas na pesquisa publicada e explorar novas possibilidades táticas para comunicação militar.</p>
+        <p class="muted">Com os resultados da Correlação de Pearson e as modelagem de regressão linear do estudo do
+          Lora comunicando entre dispositivos no solo, busca-se continuar a pesquisa, avaliando a hipótese se
+          uso de drones como receptores de visada livre pode aumentar o alcance de comunicação e reduzir a
+          corrupção de pacotes.</p>
+        <p class="muted">Já foi montado e testado o protótipo do Heltec integrado com o drone DJI Mini 2.
+          Os cenários dessa continuação do estudo serão reproduzidos com maiores distâncias entre os cenários, usando
+          dois receptores, um solo e outro no drone para comparação entre o desempenho dos enlaces.
+        </p>
       </div>
-      <div class="card" style="padding:18px">
-        <img alt="imagem5" src="img/image4.jpg" />
-        <div class="card-body">
-          <p class="card-text">Espaço reservado para gráficos e imagens do experimento com drones e análise comparativa do alcance e integridade do protocolo.</p>
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="assets/image5.jpg" alt="Foto drone 1">
+          <img src="assets/drone.jpg" alt="Foto drone 2">
+          <img src="assets/image4.jpg" alt="Foto drone 2">
         </div>
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
       </div>
+
     </div>
   </section>
 
   <!-- Conteúdo (Blog/Insights) -->
-  <section id="conteudo" class="container">
+  <section id="equipe" class="container">
     <div class="section-head">
       <div>
         <span class="eyebrow">Equipe</span>
@@ -147,32 +243,38 @@
       </div>
     </div>
 
-    <div class="grid-3">
+    <div class="grid-4">
       <article class="card">
-        <!-- <img class="card-media" alt="imagem6" src="img/image5" /> -->
-        <div class="card-body">
-          <h3 class="card-title">Henrique Ângelo Censi de Andrade</h3>
-          <p class="card-text">Estudante de Análise e Desenvolvimento de Sistemas no IFSP. 
-          <a href="https://www.linkedin.com/in/henrique-andrade-344231272/" target="_blank">LinkedIn</a> | <a href="mailto:henrique.a.c.andrade@gmail.com">E-mail</a></p>
-        </div>
-      </article>
-      <article class="card">
-        <!-- <img class="card-media" alt="imagem7" src="img/image6" /> -->
+        <!-- <img class="card-media" alt="imagem7" src="assets/image6" /> -->
         <div class="card-body">
           <h3 class="card-title">João Pedro de Holanda Wandermmuren Espanhol</h3>
-          <p class="card-text">Estudante de Análise e Desenvolvimento de Sistemas no IFSP. 
-          <a href="https://www.linkedin.com/in/jo%C3%A3opedroespanhol/" target="_blank">LinkedIn</a> | <a href="mailto:jpespanhol300@gmail.com">E-mail</a></p>
+          <p class="card-text">Estudante de Análise e Desenvolvimento de Sistemas no IFSP.
+            <br>
+            <a class="cta" href="https://www.linkedin.com/in/jo%C3%A3opedroespanhol/" target="_blank">LinkedIn</a>
+            <a class="cta" href="mailto:jpespanhol300@gmail.com" target="_blank">E-mail</a>
+          </p>
         </div>
       </article>
       <article class="card">
-        <!-- <img class="card-media" alt="imagem8" src="img/image7" /> -->
+        <!-- <img class="card-media" alt="imagem6" src="assets/image5" /> -->
+        <div class="card-body">
+          <h3 class="card-title">Henrique Ângelo Censi de Andrade</h3>
+          <p class="card-text">Estudante de Análise e Desenvolvimento de Sistemas no IFSP.
+            <br>
+            <a class="cta" href="https://www.linkedin.com/in/henrique-andrade-344231272/" target="_blank">LinkedIn</a>
+            <a class="cta" href="mailto:henrique.a.c.andrade@gmail.com" target="_blank">E-mail</a>
+          </p>
+        </div>
+      </article>
+      <article class="card">
+        <!-- <img class="card-media" alt="imagem8" src="assets/image7" /> -->
         <div class="card-body">
           <h3 class="card-title">Danilo Habermann</h3>
           <p class="card-text">Coronel no Exército Brasileiro, co-orientador do estudo.</p>
         </div>
       </article>
       <article class="card">
-        <!-- <img class="card-media" alt="imagem9" src="img/image8" /> -->
+        <!-- <img class="card-media" alt="imagem9" src="assets/image8" /> -->
         <div class="card-body">
           <h3 class="card-title">Glauber da Rocha Balthazar</h3>
           <p class="card-text">Professor no IFSP, orientador da pesquisa.</p>
@@ -185,40 +287,34 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <div class="brand" style="margin-bottom:12px"><span class="logo"></span><span>IoT no <strong>Comando e Controle</strong></span></div>
-        <p class="muted">Equipe de pesquisa: Henrique Ângelo, João Pedro, Danilo Habermann (co-orientador) e Glauber da Rocha Balthazar (orientador).</p>
-        <p class="muted">LinkedIn: <a href="https://www.linkedin.com/in/henrique-andrade-344231272/" target="_blank">Henrique</a>, <a href="https://www.linkedin.com/in/jo%C3%A3opedroespanhol/" target="_blank">João Pedro</a></p>
+        <div class="brand" style="margin-bottom:12px"><span class="logo"></span><span>IoT no <strong>Comando e
+              Controle</strong></span></div>
+        <p class="muted">Equipe de pesquisa: João Pedro HW Espanhol, Henrique Ângelo Censi de Andrade, Danilo Habermann
+          e Glauber da Rocha Balthazar.</p>
       </div>
       <div class="footer-links">
         <strong>Site</strong>
-        <a href="#servicos">Serviços</a>
-        <a href="#portfolio">Portfólio</a>
-        <a href="#sobre">Sobre</a>
+        <a href="#especificacoes">Especificações</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#futuro">Futuro</a>
       </div>
       <div class="footer-links">
         <strong>Conteúdo</strong>
-        <a href="#conteudo">Equipe</a>
+        <a href="#equipe">Equipe</a>
       </div>
       <div class="footer-links">
         <strong>Contato</strong>
-        <a href="mailto:henrique.a.c.andrade@gmail.com">henrique.a.c.andrade@gmail.com</a>
         <a href="mailto:jpespanhol300@gmail.com">jpespanhol300@gmail.com</a>
+        <a href="mailto:henrique.a.c.andrade@gmail.com">henrique.a.c.andrade@gmail.com</a>
       </div>
     </div>
     <div class="container" style="border-top:1px solid var(--neutral-200); padding: 16px 0">
-      <small>© <span id="year"></span> Henrique Ângelo e João Pedro. Todos os direitos reservados.</small>
+      <small>© <span id="year"></span> João Pedro HW Espanhol e Henrique Ângelo Censi de Andrade. Todos os direitos
+        reservados.</small>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const burger = document.querySelector('.burger');
-    const panel = document.getElementById('mobile');
-    burger?.addEventListener('click', () => {
-      const open = panel.classList.toggle('open');
-      burger.setAttribute('aria-expanded', String(open));
-      panel.setAttribute('aria-hidden', String(!open));
-    });
-  </script>
+  <script src="index.js"></script>
 </body>
+
 </html>
